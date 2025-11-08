@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Gerenciador de Tarefas Ágil
 
 Este projeto simula um sistema simples de gerenciamento de tarefas baseado em metodologias ágeis, permitindo criar, listar, atualizar e remover tarefas.
@@ -39,3 +40,6 @@ Foi utilizado **Kanban** através da aba **Projects** do GitHub, com fluxo:
 
 ## 🔄 Mudança de Escopo (Será adicionada depois)
 Explicaremos aqui quando fizermos a alteração planejada.
+=======
+# gerenciador-de-tarefas-agil
+>>>>>>> 7013daf0d4d696d2ddfdf5ad35a6c112d1724feb
