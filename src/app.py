@@ -12,10 +12,12 @@ def listar_tarefas():
 def criar_tarefa():
     dados = request.get_json()
     nova_tarefa = {
-        "id": len(tarefas) + 1,
-        "titulo": dados["titulo"],
-        "descricao": dados.get("descricao", ""),
-        "status": "pendente"
+       "id": len(tarefas) + 1,
+       "titulo": dados["titulo"],
+       "descricao": dados.get("descricao", ""),
+       "status": "pendente",
+       "prioridade": dados.get("prioridade", "Média")  # valor padrão
+}
     }
     tarefas.append(nova_tarefa)
     return jsonify(nova_tarefa), 201
@@ -28,6 +30,7 @@ def atualizar_tarefa(id):
             tarefa["titulo"] = dados.get("titulo", tarefa["titulo"])
             tarefa["descricao"] = dados.get("descricao", tarefa["descricao"])
             tarefa["status"] = dados.get("status", tarefa["status"])
+            tarefa["prioridade"] = dados.get("prioridade", tarefa["prioridade"])
             return jsonify(tarefa)
     return jsonify({"erro": "Tarefa não encontrada"}), 404
 
