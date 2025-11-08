@@ -7,6 +7,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Baixar repositório
         uses: actions/checkout@v3
@@ -20,6 +21,10 @@ jobs:
         run: |
           pip install flask
           pip install pytest
+
+      - name: Adicionar caminho da pasta src ao Python
+        run: |
+          echo "PYTHONPATH=$PYTHONPATH:$(pwd)/src" >> $GITHUB_ENV
 
       - name: Executar testes
         run: |
